@@ -14,7 +14,7 @@ sudo useradd -m -s /bin/bash -G devteam bob
 sudo passwd alice
 sudo passwd bob
 ```
-![alt text](<../evidence/Screenshot 2025-12-01 155234.png>)
+![alt text](<evidence/Screenshot 2025-12-01 155234.png>)
 
 Here is a **clear, step-by-step guide with commands** for each topic from **Level 1 to Level 3**, exactly matching your checklist:
 
@@ -26,7 +26,7 @@ sudo mkdir -p /projects/app1
 sudo chown -R :devteam /projects/app1
 sudo chmod -R 770 /projects/app1
 ```
-![alt text](<../evidence/Screenshot 2025-12-01 155646.png>)
+![alt text](<evidence/Screenshot 2025-12-01 155646.png>)
 
 - Install required packages (git, nginx, java)
 ``` bash
@@ -36,7 +36,7 @@ sudo apt install git nginx openjdk-11-jdk -y
 # OR for CentOS/RHEL:
 sudo yum install git nginx java-11-openjdk -y
 ```
-![alt text](../evidence/3.png) ![alt text](../evidence/4.png) ![alt text](../evidence/5.png)
+![alt text](evidence/3.png) ![alt text](evidence/4.png) ![alt text](evidence/5.png)
 
 ---
 
@@ -57,7 +57,7 @@ lsblk
 uname -a
 cat /etc/os-release
 ```
-![alt text](../evidence/7.png) ![alt text](../evidence/8.png)
+![alt text](evidence/7.png) ![alt text](evidence/8.png)
 ---
 
 # 🟡 Level 2 – Intermediate (Daily DevOps Tasks)
@@ -71,7 +71,7 @@ crontab -e
 # Add this line to run backup daily at 1 AM
 0 1 * * * tar -czf /backup/app_backup_$(date +\%F).tar.gz /projects/app1
 ```
-![alt text](../evidence/9.png) ![alt text](../evidence/10.png)
+![alt text](evidence/9.png) ![alt text](evidence/10.png)
 ---
 
 ### 6️⃣ Shell Scripts: Log Cleanup, Service Restart, Health Check
@@ -82,7 +82,7 @@ crontab -e
 #!/bin/bash
 find /var/log -name "*.log" -type f -mtime +7 -delete
 ```
-![alt text](../evidence/11.png)
+![alt text](evidence/11.png)
 
 📄 restart_service.sh
 
@@ -91,7 +91,7 @@ find /var/log -name "*.log" -type f -mtime +7 -delete
 sudo systemctl restart nginx
 sudo systemctl restart sshd
 ```
-![alt text](../evidence/12.png) ![alt text](../evidence/13.png)
+![alt text](evidence/12.png) ![alt text](evidence/13.png)
 
 📄 health_check.sh
 
@@ -99,11 +99,11 @@ sudo systemctl restart sshd
 #!/bin/bash
 curl -I http://localhost || echo "Service is down"
 ```
-![alt text](../evidence/14.png)
+![alt text](evidence/14.png)
 ```bash
 chmod +x *.sh
 ```
-![alt text](../evidence/15.png)
+![alt text](evidence/15.png)
 
 ---
 
@@ -117,7 +117,7 @@ sudo tail -f nginx/access.log
 sudo journalctl (it will show uh entire logs)
 
 ```
-[text](README.md) ![text](../evidence/16-7.png) ![text](../evidence/17-7.png) ![text](../evidence/18-7.png) ![text](../evidence/19-7.png)
+[text](README.md) ![text](evidence/16-7.png) ![text](evidence/17-7.png) ![text](evidence/18-7.png) ![text](evidence/19-7.png)
 ---
 
 ### 8️⃣ Monitor System Performance & Troubleshoot
@@ -138,7 +138,7 @@ evidence/8-3.png evidence/8-4.png
 # Check network
 netstat -tulnp   # or ss -tulnp
 ```
-![alt text](../evidence/8-5.png)
+![alt text](evidence/8-5.png)
 ---
 
 # 🔴 Level 3 – Advanced (Production-Ready Linux Admin)
@@ -167,7 +167,7 @@ sudo systemctl enable myapp
 sudo systemctl start myapp
 sudo systemctl status myapp
 ```
-![alt text](../evidence/9-1.png) ![alt text](../evidence/9-2.png) ![alt text](../evidence/9-3.png)
+![alt text](evidence/9-1.png) ![alt text](evidence/9-2.png) ![alt text](evidence/9-3.png)
 ---
 
 ### 🔟 SSH Hardening
@@ -187,7 +187,7 @@ AllowUsers alice bob
 ```bash
 sudo systemctl restart sshd
 ```
-![alt text](../evidence/9-4.png)
+![alt text](evidence/9-4.png)
 ---
 
 ### 1️⃣1️⃣ LVM Setup for Storage Scaling
@@ -245,7 +245,7 @@ evidence/123.png
 
 📄 `/etc/logrotate.d/myapp`
 
-![alt text](../evidence/13-1.png)
+![alt text](evidence/13-1.png)
 
 ```ini
 /var/log/myapp/*.log {
